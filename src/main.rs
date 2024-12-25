@@ -51,71 +51,49 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     Add {
-
         title: String,
-
         #[arg(short, long)]
         description: Option<String>,
-
         #[arg(short, long)]
         due: Option<String>,
-
         #[arg(short, long, default_value = "medium")]
         priority: String,
-
         #[arg(short, long, default_value = "personal")]
         category: String,
-
         #[arg(short, long)]
         tags: Option<String>,
     },
-
     List {
-
         #[arg(short, long)]
         category: Option<String>,
-
         #[arg(short, long)]
         priority: Option<String>,
-
         #[arg(short, long)]
         completed: bool,
-
         #[arg(short, long)]
         pending: bool,
     },
-
     Show {
-
         id: usize,
     },
-
     Complete {
-
         id: usize,
     },
     Remove {
         id: usize,
     },
     Edit {
-
         id: usize,
-
         #[arg(short, long)]
         title: Option<String>,
-
         #[arg(short, long)]
         description: Option<String>,
-
         #[arg(short, long)]
         due: Option<String>,
-
         #[arg(short, long)]
         priority: Option<String>,
-
         #[arg(short, long)]
         category: Option<String>,
-
         #[arg(short, long)]
         tags: Option<String>,
     },
@@ -522,5 +500,3 @@ fn main() {
         }
     }
 }
-                
-                
