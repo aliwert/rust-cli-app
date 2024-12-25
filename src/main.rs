@@ -1,7 +1,7 @@
 use chrono::{DateTime, Local, NaiveDateTime};
 use clap::{Parser, Subcommand};
 use colored::*;
-use prettytable::{Cell, Row, Table};
+use prettytable::{Cell, Row, Table, row};
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::PathBuf;
@@ -384,9 +384,9 @@ fn display_task_details(task: &Task) {
     table.add_row(Row::new(vec![
         Cell::new("Status"),
         Cell::new(if task.completed {
-            "Completed".green()
+            "Completed"
         } else {
-            "Pending".red()
+            "Pending"
         }),
     ]));
     table.add_row(Row::new(vec![
